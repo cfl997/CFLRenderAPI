@@ -1,0 +1,3 @@
+LIBRARY   CGRenderGLD.dll
+EXPORTS
+	pi_main
