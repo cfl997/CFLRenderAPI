@@ -6,6 +6,7 @@
 #include <tchar.h>
 
 #include "CFLTime.h"
+#include <iostream>
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "../third/stb_image_write.h"
@@ -29,12 +30,11 @@ bool CFL_GLRENDER_API CFLRenderGL_Init(const TCHAR* pluginPath)
 	if (!isInit)
 		return false;
 	isInit = false;
-	//char* pDllName = NULL;
 	TCHAR* pDllName = NULL;
 #ifdef _DEBUG
-	pDllName = L"CGRenderGLD.DLL";
+	pDllName = L"CFLRenderGLD.DLL";
 #else
-	pDllName = L"CGRenderGL.DLL";
+	pDllName = L"CFLRenderGL.DLL";
 #endif
 
 	_tcscpy(g_szPathPlugIn, pluginPath);
@@ -59,7 +59,6 @@ bool CFL_GLRENDER_API CFLRenderGL_Init(const TCHAR* pluginPath)
 
 	if (hDll)
 	{
-		//pi_main p = (pi_main)GetProcAddress((HINSTANCE)hDll, "pi_main");
 		CGTIME_START;
 		pi_main p = (pi_main)GetProcAddress((HMODULE)hDll, "pi_main");
 		CGTIME_END("GetProcAddress");
@@ -81,7 +80,9 @@ bool CFL_GLRENDER_API CFLRenderGL_Init(const TCHAR* pluginPath)
 		g_deviceManager.p = p;
 		return true;
 	}
+	std::wcout << "error: loadlibrary: " << GetLastError() << std::endl;
 	_tprintf(_T("error:%s\n"), pDllName);
+	assert(false);
 
 	return false;
 }

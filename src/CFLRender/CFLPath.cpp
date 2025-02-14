@@ -140,7 +140,7 @@ std::wstring AnsiToWString(const std::string& str)
 #include <iostream>
 #include <mutex>
 
-static const std::wstring TextCodeDataName = L"/CodeTextData.csv";
+static const std::wstring TextCodeDataName = L"/Code2Text.csv";
 std::unordered_map<long, std::wstring>g_TextCode;
 static bool isTextInit = false;
 std::mutex mutex;
@@ -182,6 +182,10 @@ CFL_GLRENDER_API bool CGText_Init()
 				std::wcerr << L"CSV文件中超出范围的键: " << keyStr << std::endl;
 				continue;
 			}
+		}
+		else {
+			std::wcerr << L"CSV文件中无效的行: " << line << std::endl;
+			assert(false);
 		}
 	}
 	file.close();

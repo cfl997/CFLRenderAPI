@@ -97,7 +97,7 @@ int SetupDefaultDC(HDisplay dc)
 bool initGLA()
 {
 
-
+	if(0)
 	{
 		CGTIME_START;
 		GLenum err = glewInit();

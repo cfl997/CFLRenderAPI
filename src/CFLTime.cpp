@@ -1,8 +1,17 @@
+/*
+* DebugLogFile
+* github:https://github.com/cfl997/DebugLogFile
+* author : cfl997
+*/
+
+
 #include "CFLTime.h"
 
 
 #include <mutex>
 #include <iostream>
+
+
 
 std::chrono::steady_clock::time_point start, end;
 
