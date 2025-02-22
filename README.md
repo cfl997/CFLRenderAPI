@@ -112,7 +112,7 @@ CFLRenderAPI 项目采用 [MIT 许可证](LICENSE)。
 如果你有任何问题或建议，请通过以下方式联系我们：
 
 - **GitHub Issues**: [https://github.com/cfl997/CFLRenderAPI/issues](https://github.com/cfl997/CFLRenderAPI/issues)
-- **Email**: [cfl997@example.com](mailto:cfl997@163.com)
+- **Email**: [cfl997@163.com](mailto:cfl997@163.com)
 
 ---
 
